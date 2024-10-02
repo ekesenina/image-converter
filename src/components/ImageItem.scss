@@ -1,21 +1,25 @@
+@import '../styles/neonButton';
+
+
+
 .image-item {
-    margin: 10px;
-    text-align: center;
-  
-    img {
-      max-width: 200px;
-      height: auto;
-      display: block;
-      margin-bottom: 10px;
-    }
-  
-    button {
-      padding: 5px 10px;
-      background-color: #007bff;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+  margin: 10px;
+  text-align: center;
+
+  img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    border-radius: 5px;
   }
-  
+
+  button {
+    @include neon-button();
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}

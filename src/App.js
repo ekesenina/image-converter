@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './App.scss';
 import ImageUploader from './components/ImageUploader';
 import ImageList from './components/ImageList';
+import ThemeSwitcher from './components/ThemeSwitcher';
+import { ThemeContext } from './ThemeContext';
 import { convertImagesToWebP } from './utils/imageConversion';
 
 function App() {
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const [convertedFiles, setConvertedFiles] = useState([]);
+  const [selectedFiles, setSelectedFiles] = React.useState([]);
+  const [convertedFiles, setConvertedFiles] = React.useState([]);
+  const { isDarkTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      'data-theme',
+      isDarkTheme ? 'dark' : 'light'
+    );
+  }, [isDarkTheme]);
 
   const handleFilesSelected = (files) => {
     setSelectedFiles(files);
@@ -22,6 +32,7 @@ function App() {
 
   return (
     <div className="app">
+      <ThemeSwitcher />
       <h1>Конвертер изображений в WebP</h1>
       <ImageUploader
         onFilesSelected={handleFilesSelected}
@@ -36,7 +47,3 @@ function App() {
 }
 
 export default App;
-
-
-
-

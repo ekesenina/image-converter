@@ -26,7 +26,11 @@ function ImageUploader({ onFilesSelected, clearFiles }) {
 
   return (
     <div className="image-uploader">
+      <label htmlFor="file-input" className="upload-label">
+        Выбрать изображения
+      </label>
       <input
+        id="file-input"
         type="file"
         multiple
         accept="image/png, image/jpeg"
