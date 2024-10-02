@@ -1,0 +1,21 @@
+.image-item {
+    margin: 10px;
+    text-align: center;
+  
+    img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  }
+  
