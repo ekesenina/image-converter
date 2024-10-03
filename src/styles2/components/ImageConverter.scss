@@ -1,0 +1,126 @@
+/* Файл: src/styles/components/ImageConverter.scss */
+
+@import './../variables.scss';
+@import './../neonButton.scss';
+
+@keyframes neonGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 40px var(--primary-color), 0 0 80px var(--primary-color);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color), 0 0 60px var(--primary-color), 0 0 100px var(--primary-color);
+  }
+}
+
+
+
+.app {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative; /* Для позиционирования ThemeSwitcher */
+
+  h1 {
+    color: var(--primary-color);
+    animation: neonGlow 2s infinite;
+  }
+
+  /* Используем миксин для кнопок */
+  button {
+    @include neon-button();
+
+    margin: 10px;
+
+    &:disabled {
+      color: #ccc;
+      cursor: not-allowed;
+      box-shadow: none;
+      &:after {
+        border-color: #ccc;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.image-converter {
+  text-align: center;
+  padding: 20px;
+
+  h1 {
+    color: var(--primary-color);
+    animation: neonGlow 2s infinite;
+  }
+
+  .image-uploader {
+    margin: 20px 0;
+
+    input[type='file'] {
+      display: none;
+    }
+
+    .upload-label {
+      @include neon-button();
+      cursor: pointer;
+    }
+
+    .preview-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      justify-content: center;
+
+      .preview-item {
+        margin: 5px;
+        border: 1px solid var(--primary-color);
+        padding: 5px;
+        border-radius: 5px;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        box-shadow: 0 0 5px var(--primary-color);
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  button {
+    @include neon-button();
+    margin: 10px;
+  }
+
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .image-item {
+      margin: 10px;
+      text-align: center;
+
+      img {
+        max-width: 200px;
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid var(--primary-color);
+        box-shadow: 0 0 10px var(--primary-color);
+        border-radius: 5px;
+      }
+
+      button {
+        @include neon-button();
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

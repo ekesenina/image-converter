@@ -1,0 +1,20 @@
+// @import 'variables';
+@import 'neonButton';
+
+/* Импорт стилей компонентов */
+@import 'components/ImageConverter';
+@import 'components/ThemeSwitcher';
+
+/* Глобальные стили (если нужны) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  

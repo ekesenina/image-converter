@@ -1,0 +1,46 @@
+@import 'variables'
+
+.app
+    &__themeSwitcher
+        width: fit-content
+        position: absolute
+        top: 20px
+        right: 20px
+        &__switch
+            position: relative
+            display: inline-block
+            width: 60px
+            height: 34px
+            &__checkbox
+                opacity: 0
+                width: 0
+                height: 0
+            &__slider
+                position: absolute
+                cursor: pointer
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background-color: var(--background-color)
+                transition: 0.4s
+                border-radius: 34px
+                box-shadow: 0 0 10px var(--button-border-color2), 0 0 10px var(--button-border-color1)
+                &:before
+                    position: absolute
+                    content: ''
+                    height: 26px
+                    width: 26px
+                    left: 4px
+                    bottom: 4px
+                    background-color: var(--button-text-color)
+                    transition: 0.4s
+                    border-radius: 50%
+                    box-shadow: 0 0 5px var(--button-text-color), 0 0 10px var(--button-text-color)
+            &__checkbox:checked + &__slider 
+                background-color: var(--background-color)
+                box-shadow: 0 0 10px var(--button-border-color2), 0 0 10px  var(--button-border-color1)
+            &__checkbox:checked + &__slider:before 
+                transform: translateX(26px)
+                box-shadow: 0 0 5px var(--button-text-color), 0 0 10px var(--button-text-color)
+

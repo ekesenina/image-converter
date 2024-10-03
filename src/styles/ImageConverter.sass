@@ -1,0 +1,186 @@
+@import 'variables'
+
+.app
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    width: 100vw
+    height: 100vh
+    &__container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        align-content: center
+        margin-top: 80px
+        height: fit-content
+        &__title
+            font-family: 'display'
+            font-size: 56px
+            display: block
+            color: var(--title-color)
+            background-color: #ffffff00
+            text-shadow: 0 0 10px #00a171, 0 0 20px #00e29e, 0 0 40px #13ffb8, 0 0 80px #6dffd3
+            // will-change: filter, color
+            filter: saturate(60%)
+            margin: 0px 10px 50px 10px
+            // margin-bottom: 50px
+            animation: neonGlow 2s infinite
+            @media ( min-width: 1025px ) and ( max-width: 1240px )
+                font-size: 48px
+            @media ( min-width: 0px ) and ( max-width: 1024px )
+                font-size: 42px
+            // @media ( min-width: 0px ) and ( max-width: 850px )
+            //     font-size: 36px
+        &__uploader
+            position: relative
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            height: fit-content
+            margin-bottom: 20px
+            &__box
+                margin-bottom: 40px
+                &__button
+                    display: block
+                    position: relative
+                    font-family: 'main'
+                    background-color: #ffffff00
+                    width: 100%
+            &__input
+                display: none
+            &__preview
+                &__item
+                    &__img
+                        width: 400px
+                        @media ( min-width: 426px ) and ( max-width: 768px )
+                            width: 300px
+                        @media ( min-width: 0px ) and ( max-width: 425px )
+                            width: 250px
+                        border-radius: 30px
+        &__convertButton
+            &__layout
+                width: 332px !important
+                // font-family: 'main'
+                // background-color: #ffffff00
+                // color: #fff
+                // outline: none
+                // border: none
+                // text-align: center
+                // font-size: 16px
+                // cursor: pointer
+                // width: 100%
+                &__text
+                    font-family: 'main'
+                    background-color: #ffffff00
+                    color: #fff
+                    outline: none
+                    border: none
+                    text-align: center
+                    font-size: 16px
+                    cursor: pointer
+                    width: 100%
+        &__converted
+            margin-top: 50px
+            &__item
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                &__img
+                    width: 400px
+                    @media ( min-width: 426px ) and ( max-width: 768px )
+                        width: 300px
+                    @media ( min-width: 0px ) and ( max-width: 425px )
+                        width: 250px
+                    border-radius: 30px
+                    margin-bottom: 30px
+                &__button
+                    font-family: 'main'
+                    background-color: #ffffff00
+                    color: #fff
+                    outline: none
+                    border: none
+                    text-align: center
+                    font-size: 16px
+                    cursor: pointer
+                    width: 100%
+
+
+.block
+  background: linear-gradient(180deg, #414141 0%, #2b2b2b 60%)
+  position: relative
+  width: 300px
+  padding: 1rem
+  margin: 0px auto 
+  color: #fff
+  border-radius: 30px
+  text-align: center
+  transition: opacity 0.5s ease-in-out
+  box-shadow: 0 0 10px var(--button-border-color1), 0 0 20px var(--button-border-color2)
+  z-index: 2 // Контейнер на верхнем слое
+  &:disabled
+    color: #ff0000
+    box-shadow: 0 0 10px #dd5151, 0 0 20px #fc0101
+  &:hover
+    transition: opacity 0.5s ease-in-out
+    box-shadow: none
+  .block__content
+    position: relative
+    z-index: 3 // Текст и содержимое всегда на самом верхнем слое
+.glow
+  position: relative
+  width: 334px
+  height: 55px
+  z-index: 0 // Слой .glow ниже блока
+  &:before, &:after
+    content: ''
+    position: absolute
+    // left: -5px
+    // top: 5px
+    left: 0
+    top: 0
+    background: linear-gradient(45deg, #993333, #ff00ff, #6e0dd0, #099fff, #ff00ff, #993333)
+    background-size: 200%
+    width: calc(100% + 5px)
+    height: calc(100% + 5px)
+    z-index: 0 // Псевдоэлементы на заднем плане
+    filter: blur(20px)
+    opacity: 0
+    transition: opacity 0.5s ease-in-out
+    animation: neonButton 20s linear infinite
+  &:hover:before
+    opacity: 1
+
+
+// .block 
+//   background: linear-gradient(180deg, #000000, #111111)
+//   position: relative
+//   width: 300px
+//   padding: 1rem
+//   margin: 10% auto
+//   border-radius: 30px
+//   border: 1px solid whitesmoke
+
+// .glow
+//   &:before, &:after 
+//     content: ''
+//     position: absolute
+//     left: -5px
+//     top: -5px
+//     background: linear-gradient(45deg, #993333, #ff00ff, #6e0dd0, #099fff, #ff00ff, #993333)
+//     background-size: 400%
+//     width: calc(100% + 10px)
+//     height: calc(100% + 10px)
+//     z-index: -1
+//     animation: neonButton 20s linear infinite
+
+//   &:before 
+//     filter: blur(20px)
+//     opacity: 0
+//     transition: opacity 0.5s ease-in-out
+
+//   &:hover
+//     &:before 
+//       opacity: 1

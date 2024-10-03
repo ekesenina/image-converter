@@ -1,0 +1,70 @@
+@font-face
+    font-family: 'main'
+    src: url(../fonts/Montserrat.ttf)
+
+@font-face
+    font-family: 'display'
+    src: url(../fonts/Xolonium-Regular.otf)
+
+
+
+/* Переменные темы */
+:root 
+  --background-color: #363636
+  --text-color: #252525
+  --primary-color: #82c7d8
+  --secondary-color: rgba(0, 255, 255, 0.3)
+  --button-bg-color: rgba(0, 255, 255, 0.2)
+  --button-text-color: #36947d
+  --neon-color: #00ffea /* Новый цвет неона */
+  --title-color: #003626
+  --title-color1: #00ffea7c
+  --title-color2: #00ffff7c
+  --title-color3: #00c3ff7c
+  --title-color4: #0099ff7c
+  --title-color5: #b700ff62 
+  --button-border-color1: rgba(0, 255, 255, 0.3)
+  --button-border-color2: rgba(0, 255, 255, 0.2)
+
+
+
+[data-theme='light'] 
+  --background-color: #d3d3d3
+  --text-color: #ffffff
+  --primary-color: #0aff99
+  --secondary-color: #9520d8
+  --button-bg-color: #48caeb
+  --button-text-color: #8278af
+  --neon-color: #0aff99 /* Новый цвет неона */
+  --title-color: #dadada
+  --title-color1: #213fa3bd
+  --title-color2: #0069e2
+  --title-color3: #b413ff
+  --title-color4: #ff6de7
+  --title-color5: #a1e5ff
+  --button-border-color1: #48caeb
+  --button-border-color2: #9520d8
+
+// @keyframes neonGlow 
+//   0%,
+//   100% 
+//     text-shadow: 0 0 10px var(--title-color1), 0 0 20px var(--title-color2), 0 0 40px var(--title-color3), 0 0 80px var(--title-color4)
+//   50% 
+//     text-shadow: 0 0 10px var(--title-color1), 0 0 20px var(--title-color2), 0 0 30px var(--title-color3), 0 0 60px var(--title-color4)
+
+@keyframes neonGlow 
+  0%,
+  100% 
+    text-shadow: 0 0 2px var(--title-color1), 0 0 5px var(--title-color2), 0 0 8px var(--title-color3), 0 0 20px var(--title-color4)
+  50% 
+    text-shadow: 0 0 5px var(--title-color1), 0 0 8px var(--title-color2), 0 0 11px var(--title-color3), 0 0 27px var(--title-color4), 0 0 40px var(--title-color5)
+
+@keyframes neonButton 
+  0% 
+    background-position: 0 0
+  
+  50% 
+    background-position: 400% 0
+  
+  100% 
+    background-position: 0 0

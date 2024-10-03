@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 
 export const ThemeContext = createContext();
 
-function ThemeContextProvider({ children }) {
+export function ThemeProvider({ children }) {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   // Загружаем тему из локального хранилища при загрузке приложения
@@ -16,7 +16,6 @@ function ThemeContextProvider({ children }) {
   // Сохраняем тему в локальное хранилище при изменении
   useEffect(() => {
     localStorage.setItem('isDarkTheme', isDarkTheme);
-    document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
   }, [isDarkTheme]);
 
   const toggleTheme = () => {
@@ -29,5 +28,3 @@ function ThemeContextProvider({ children }) {
     </ThemeContext.Provider>
   );
 }
-
-export default ThemeContextProvider;
