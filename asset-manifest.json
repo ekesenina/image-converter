@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/image-converter/static/css/main.0be982a5.css",
+    "main.js": "/image-converter/static/js/main.b0d05790.js",
+    "static/media/Montserrat.ttf": "/image-converter/static/media/Montserrat.3faa3eef13649db02044.ttf",
+    "static/media/Xolonium-Regular.otf": "/image-converter/static/media/Xolonium-Regular.5b7820d03be66b3e3247.otf",
+    "index.html": "/image-converter/index.html",
+    "main.0be982a5.css.map": "/image-converter/static/css/main.0be982a5.css.map",
+    "main.b0d05790.js.map": "/image-converter/static/js/main.b0d05790.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0be982a5.css",
+    "static/js/main.b0d05790.js"
+  ]
+}
