@@ -51,7 +51,13 @@
             &__input
                 display: none
             &__preview
+                max-height: 50vw
+                max-width: 80vw
+                display: flex
+                overflow: auto
                 &__item
+                    width: fit-content
+                    height: fit-content
                     &__img
                         width: 400px
                         @media ( min-width: 426px ) and ( max-width: 768px )
@@ -83,6 +89,11 @@
                     width: 100%
         &__converted
             margin-top: 50px
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-evenly
+            align-content: center
+            align-items: baseline
             &__item
                 display: flex
                 flex-direction: column
